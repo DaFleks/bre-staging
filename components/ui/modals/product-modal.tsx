@@ -81,6 +81,8 @@ const ProductModal = () => {
     }
   }, [editProduct, form]);
 
+  type CheckedState = boolean | "indeterminate";
+
   //  Handlers
   const handleFocus = (e: any) => {
     e.target.select();
@@ -281,7 +283,9 @@ const ProductModal = () => {
                 <FormControl>
                   <Checkbox
                     checked={field.value}
-                    onCheckedChange={field.onChange}
+                    onCheckedChange={() => {
+                      form.setValue("isActive", !form.getValues("isActive"));
+                    }}
                     disabled={isLoading}
                   />
                 </FormControl>
