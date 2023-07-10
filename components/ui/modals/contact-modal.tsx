@@ -109,7 +109,7 @@ const ContactModal = () => {
                   />
                 </FormControl>
                 <p className="text-sm text-muted-foreground">
-                  We'll get back to you as soon as we can.
+                  We will get back to you as soon as we can.
                 </p>
               </FormItem>
             )}
