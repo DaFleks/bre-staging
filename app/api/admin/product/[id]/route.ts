@@ -29,7 +29,7 @@ export async function PATCH(req: Request, { params }: { params: { id: string } }
 
   if (req.url.split("?=")[1] === "active") {
     let product = null;
-
+    console.log(params);
     try {
       product = await Product.findById(params.id);
     } catch (error) {

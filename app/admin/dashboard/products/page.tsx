@@ -111,6 +111,7 @@ const AdminProducts = () => {
       await axios.patch(`/api/admin/product/${_id}?=active`);
     } catch (error) {
       toast("An error has occurred.");
+      console.log(error);
       setIsLoading(false);
       return;
     }
