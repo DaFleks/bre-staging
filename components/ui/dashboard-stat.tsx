@@ -1,9 +1,7 @@
-import { PackageIcon } from "lucide-react";
-
 interface DashboardStatProps {
   title: string;
   stat: string | number;
-  icon: any;
+  icon?: any;
 }
 
 const DashboardStat: React.FC<DashboardStatProps> = ({ title, stat, icon }) => {

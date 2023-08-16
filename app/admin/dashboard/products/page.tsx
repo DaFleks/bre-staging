@@ -9,7 +9,7 @@ import { PackageIcon, PlusIcon, PowerIcon, PowerOffIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import ProductTableRow from "@/components/ui/admin/ProductTableRow";
-import DashboardStat from "@/components/ui/dashboard-state";
+import DashboardStat from "@/components/ui/dashboard-stat";
 import SearchInput from "@/components/ui/search-input";
 
 import {
@@ -24,6 +24,8 @@ import {
 import useProductsStore from "@/hooks/useProductsStore";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "react-hot-toast";
+import DashboardHeader from "@/components/ui/dashboard-header";
+import DashboardStatWrapper from "@/components/ui/dashboard-stat-wrapper";
 
 const AdminProducts = () => {
   //  Hooks
@@ -135,14 +137,9 @@ const AdminProducts = () => {
 
   return (
     <>
-      <div className="mb-6">
-        <h1 className="text-xl sm:text-2xl font-bold mb-3">Products</h1>
-        <h3 className="text-sm sm:text-xl text-muted-foreground">
-          Add, update, or delete any of your products...
-        </h3>
-      </div>
+      <DashboardHeader text="Products" subtext="Add, update, or delete any of your products..." />
 
-      <div className="flex justify-between mb-6 gap-3 overflow-x-hidden">
+      <DashboardStatWrapper>
         <DashboardStat
           title="Total Products"
           stat={stats.numProducts}
@@ -158,7 +155,7 @@ const AdminProducts = () => {
           stat={stats.numInactive}
           icon={<PowerOffIcon className="h-4 w-4" />}
         />
-      </div>
+      </DashboardStatWrapper>
 
       <div className="mb-6 flex flex-col sm:flex-row-reverse sm:gap-3 justify-between items-center">
         <Button className="w-full py-6 sm:w-1/3" onClick={productToggle}>
